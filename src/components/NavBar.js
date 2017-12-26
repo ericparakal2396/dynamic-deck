@@ -90,16 +90,112 @@ class NavBar extends React.Component {
 
     if(isLoggedIn === 'accepted')
     {
+      console.log(this.props.data.userData.user.email_id)
       navItemVersion =
         <div>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle className="deck-file" data-account="#deckfile"/>
+            <DropdownToggle className="deck-file" data-account='#deckfile'/>
+            <DropdownMenu>
+              <div className="account-holder dropdown-item" id="deckfile">
+                <div className="ah-head"><h6>Decks</h6><a href="javaScript:void(0);" className="ah-close"></a></div>
+                <div className="ah-content">
+                  <div className="ah-deck-file-panel">
+                    <div className="row">
+                      <div className="deck-file-panel">
+                        <img src={require("../images/deck-file.png")} alt=""/>
+                        <div>
+                          <h3>Company Name</h3>
+                          <p>/deck-name</p>
+                          <span className="deck-item-span icon-track"></span>
+                        </div>
+                      </div>
+                      <div className="deck-file-panel">
+                        <img src={require("../images/deck-file.png")} alt=""/>
+                        <div>
+                          <h3>Company Name</h3>
+                          <p>/deck-name</p>
+                          <span className="deck-item-span icon-track not"></span>
+                        </div>
+                      </div>
+                      <div className="deck-file-panel">
+                        <img src={require("../images/deck-file.png")} alt=""/>
+                        <div>
+                          <h3>Company Name</h3>
+                          <p>/deck-name</p>
+                          <span className="deck-item-span icon-file"></span>
+                        </div>
+                      </div>
+                      <div className="deck-file-panel">
+                        <img src={require("../images/deck-file.png")} alt=""/>
+                        <div>
+                          <h3>Company Name</h3>
+                          <p>/deck-name</p>
+                          <span className="deck-item-span icon-track not"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
           </Dropdown>
           <Dropdown isOpen={this.state.dropdownOpen2} toggle={this.toggle2}>
             <DropdownToggle className="deckuser" data-account="#userpanel"/>
+            <DropdownMenu>
+              <div className="account-holder dropdown-item" id="userpanel">
+                <div className="ah-head"><h6>{this.props.data.userData.user.email_id}</h6><a href="javaScript:void(0);" className="ah-close"></a>
+                </div>
+                <div className="ah-content">
+                  <div className="ah-deck-file-panel">
+                    <div className="row">
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Switch to Deck Building</a></div>
+                    </div>
+                  </div>
+                  <div className="ah-deck-file-panel">
+                    <div className="row">
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Profile</a></div>
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Settings</a></div>
+                    </div>
+                  </div>
+                  <div className="ah-deck-file-panel">
+                    <div className="row">
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Tutorials</a></div>
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Support</a></div>
+                    </div>
+                  </div>
+                  <div className="ah-deck-file-panel">
+                    <div className="row">
+                      <div className="user-item-panel"><a href="javaScript:void(0);">Log Out</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
           </Dropdown>
-          <Dropdown>
+          <Dropdown isOpen={this.state.dropdownOpen3} toggle={this.toggle3}>
             <DropdownToggle className="button share" data-account="#shareitem">Share</DropdownToggle>
+            <DropdownMenu>
+              <div class="account-holder" id="shareitem">
+                <div class="ah-head"><h6>Share Deck</h6><a href="javaScript:void(0);" class="ah-close"></a></div>
+                <div class="ah-content">
+                  <div class="ah-form">
+                    <label>Your Unique Deck Link <a href="javaScript:void(0);" class="color-violet">Copy</a></label>
+                    <input type="text" placeholder="www.dynamicdeck.io/deck-name" name=""/>
+                  </div>
+                  <div class="ah-form">
+                    <label>Set Deck Password <a href="javaScript:void(0);">Remove</a></label>
+                    <input type="Password" placeholder="* * * * * * * * * *" name=""/>
+                  </div>
+                  <div class="ah-button">
+                    <button type="submit" class="button signup right-margin">Save</button>
+                    <div class="share-switch-panel">
+                      <div class="share-switch active"></div>
+                        Sharing on
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </DropdownMenu>
           </Dropdown>
         </div>
     }
