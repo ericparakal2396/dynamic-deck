@@ -133,5 +133,4 @@ export default class Insights extends Component {
       </section>
     )
   }
-
 }

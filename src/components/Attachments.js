@@ -223,5 +223,4 @@ export default class Attachments extends Component {
       </section>
     )
   }
-
 }

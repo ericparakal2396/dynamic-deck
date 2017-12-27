@@ -91,8 +91,6 @@ export default class DeckUpdates extends Component {
           </div>
         </div>
       </section>
-
     )
   }
-
 }
