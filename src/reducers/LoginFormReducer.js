@@ -21,26 +21,34 @@ function LoginFormReducer(state=initialState,action){
 
     case 'LOGIN_FULFILLED':
       userData = action.payload.data;
-      //console.log(userData);
-
-      var size = Object.keys(userData).length;
+      console.log(userData.status);
       //console.log(size);
 
-      if(size === 1)
+      if(userData.status === 'success')
       {
-        //console.log('Login Failed');
-        return {...state, loading: false, userData ,login: 'rejected', error: null, recoverPassword: false};
+        return {...state, loading: false, userData ,login: 'accepted', error: null, recoverPassword: false};
       }
 
       else
       {
         //console.log('Login Successful');
-        return {...state, loading: false, userData ,login: 'accepted', error: null, recoverPassword: false};
+        return {...state, loading: false, userData ,login: 'rejected', error: null, recoverPassword: false};
       }
 
 
 
     case 'LOGIN_REJECTED':
+      return {...state, loading: false, error: `${action.payload.message}`}
+
+
+    case 'LISTDECK_PENDING':
+      return {...state,loading:true}
+
+    case 'LISTDECK_FULFILLED':
+      userData = action.payload.data;
+      return {...state, loading: false, userData };
+
+    case 'LISTDECK_REJECTED':
       return {...state, loading: false, error: `${action.payload.message}`}
 
     case 'LOGOUT':

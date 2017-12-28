@@ -7,7 +7,7 @@ import '../css/layout.min.css';
 
 let LoginForm = props => {
 
-  const { handleSubmit,recoveremail,login,data } = props
+  const { handleSubmit,recoveremail,login,listdeck,data } = props
   let error = {};
   let isError = false;
 
@@ -63,7 +63,7 @@ let LoginForm = props => {
     {
       //console.log('False');
       //console.log(error2);
-      error2=data.userData[0].message;
+      error2=data.userData.message;
       data.login=null;
     }
 

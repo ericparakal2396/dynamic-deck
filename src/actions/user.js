@@ -19,6 +19,19 @@ export function login(user) {
 }
 }
 
+export function listdeck()
+{
+  return {
+    type: 'LISTDECK',
+    payload: axios.get('http://ec2-54-251-185-219.ap-southeast-1.compute.amazonaws.com:80/api/public/DeckActions/listdeck', {
+      params:{
+        userid:1,
+        type:'entrepreneur'
+      }
+  })
+}
+}
+
 export function logout() {
   return {
     type: 'LOGOUT',

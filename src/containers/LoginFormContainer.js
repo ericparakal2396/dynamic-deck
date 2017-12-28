@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import LoginForm from '../components/LoginForm';
 import {recoveremail} from '../actions/user';
 import {login} from '../actions/user';
+import {listdeck} from '../actions/user';
 
 const mapStateToProps = (state) => ({
   data: state.LoginFormReducer,
@@ -14,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     login: (user) => {
       dispatch(login(user))
+    },
+    listdeck: () => {
+      dispatch(listdeck())
     }
   }
 }
