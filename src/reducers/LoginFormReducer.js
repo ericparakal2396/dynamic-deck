@@ -1,6 +1,7 @@
 const initialState = {
   recoverPassword:false,
   login:null,
+  logout:false,
   loading: false,
   error: null,
   userData:{},
@@ -41,6 +42,9 @@ function LoginFormReducer(state=initialState,action){
 
     case 'LOGIN_REJECTED':
       return {...state, loading: false, error: `${action.payload.message}`}
+
+    case 'LOGOUT':
+      return {...state, loading:false, login: null, logout:true};
 
     default:
       return state

@@ -81,23 +81,7 @@ let CreateAccount = props => {
 
   return (
     <Form onSubmit={ handleSubmit(submit) }>
-    <div className="ah-form">
 
-      <Field name='userType' component={renderRadioGroup}>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" value='entrepreneur'/>{' '}
-                Entrepeneur
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio1" value='investor'/>{' '}
-                Investor
-            </Label>
-          </FormGroup>
-        </Field>
-        </div>
 
       <div className="ah-form">
         <label>Your Email</label>
@@ -109,10 +93,22 @@ let CreateAccount = props => {
         <Field type="Password" placeholder="* * * * * * * * * *" component={renderTextField} name="password"/>
 
       </div>
+      <div className="ah-form">
+
+
+        <Field name='userType' component={renderRadioGroup}>
+          <h6>Your Primary Role</h6>
+          <ul className="ah-switchs">
+            <li><div className="ah-radio"><Input type="radio" name="switch" value='entrepreneur'/><span></span></div>Entrepeneur</li>
+            <li><div className="ah-radio"><Input type="radio" name="switch" value='investor'/><span></span></div>Investor</li>
+          </ul>
+        </Field>
+      </div>
       <div className="ah-button">
         <button type="submit" className="button signup right-margin">Create</button>
       </div>
     </Form>
+
 
 
 
